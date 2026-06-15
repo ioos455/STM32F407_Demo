@@ -1,2 +1,2 @@
 # STM32F407_Demo
-基于STM32F407的FreeRTOS+LVGL多传感器采集与显示Demo以及串口日志打印
+基于STM32F407的FreeRTOS+LVGL多传感器采集与显示Demo以及串口日志打印，详情请看master
