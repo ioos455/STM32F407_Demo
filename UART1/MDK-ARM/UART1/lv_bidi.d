@@ -1,0 +1,17 @@
+uart1\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_bidi.c
+uart1\lv_bidi.o: C:\Users\PC\Desktop\keil\ARM\ARMCC\Bin\..\include\stddef.h
+uart1\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_bidi.h
+uart1\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_internal.h
+uart1\lv_bidi.o: C:\Users\PC\Desktop\keil\ARM\ARMCC\Bin\..\include\stdint.h
+uart1\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_kconfig.h
+uart1\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+uart1\lv_bidi.o: C:\Users\PC\Desktop\keil\ARM\ARMCC\Bin\..\include\stdbool.h
+uart1\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_txt.h
+uart1\lv_bidi.o: C:\Users\PC\Desktop\keil\ARM\ARMCC\Bin\..\include\stdarg.h
+uart1\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_area.h
+uart1\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../font/lv_font.h
+uart1\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../font/lv_symbol_def.h
+uart1\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_printf.h
+uart1\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_types.h
+uart1\lv_bidi.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../misc/lv_mem.h
+uart1\lv_bidi.o: C:\Users\PC\Desktop\keil\ARM\ARMCC\Bin\..\include\string.h

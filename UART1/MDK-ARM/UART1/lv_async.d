@@ -1,0 +1,12 @@
+uart1\lv_async.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_async.c
+uart1\lv_async.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_async.h
+uart1\lv_async.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_types.h
+uart1\lv_async.o: C:\Users\PC\Desktop\keil\ARM\ARMCC\Bin\..\include\stdint.h
+uart1\lv_async.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_mem.h
+uart1\lv_async.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_internal.h
+uart1\lv_async.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_kconfig.h
+uart1\lv_async.o: ..\Middlewares\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+uart1\lv_async.o: C:\Users\PC\Desktop\keil\ARM\ARMCC\Bin\..\include\stddef.h
+uart1\lv_async.o: C:\Users\PC\Desktop\keil\ARM\ARMCC\Bin\..\include\string.h
+uart1\lv_async.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_timer.h
+uart1\lv_async.o: C:\Users\PC\Desktop\keil\ARM\ARMCC\Bin\..\include\stdbool.h

@@ -1,0 +1,14 @@
+uart1\lv_anim_timeline.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_anim_timeline.c
+uart1\lv_anim_timeline.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_anim_timeline.h
+uart1\lv_anim_timeline.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_anim.h
+uart1\lv_anim_timeline.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_internal.h
+uart1\lv_anim_timeline.o: C:\Users\PC\Desktop\keil\ARM\ARMCC\Bin\..\include\stdint.h
+uart1\lv_anim_timeline.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\../lv_conf_kconfig.h
+uart1\lv_anim_timeline.o: ..\Middlewares\LVGL\GUI\lvgl\examples\porting\../../lv_conf.h
+uart1\lv_anim_timeline.o: C:\Users\PC\Desktop\keil\ARM\ARMCC\Bin\..\include\stdbool.h
+uart1\lv_anim_timeline.o: C:\Users\PC\Desktop\keil\ARM\ARMCC\Bin\..\include\stddef.h
+uart1\lv_anim_timeline.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_mem.h
+uart1\lv_anim_timeline.o: C:\Users\PC\Desktop\keil\ARM\ARMCC\Bin\..\include\string.h
+uart1\lv_anim_timeline.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_types.h
+uart1\lv_anim_timeline.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_assert.h
+uart1\lv_anim_timeline.o: ..\Middlewares\LVGL\GUI\lvgl\src\misc\lv_log.h
