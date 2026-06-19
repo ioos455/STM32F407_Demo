@@ -9,6 +9,9 @@
 My_Gui_T my_gui_switch;
 My_Gui_T my_gui_label;
 
+lv_obj_t *task_all;
+void task_on(void);
+
 
 static void all_even_cb(lv_event_t * e)							//回调函数
 {
@@ -51,6 +54,23 @@ static void all_even_cb(lv_event_t * e)							//回调函数
 			{
 				vTaskSuspend(AxiTask_Handler);
 //				lv_label_set_text_fmt(my_gui_label.axi, "Axi:");
+			}
+		}
+		
+		/************************总的任务开关**************************/
+				if(tar == task_all)							// 判断是否为六轴加速度开关
+		{
+			if(lv_obj_has_state(tar , LV_STATE_CHECKED))	// 判断开关是否打开
+			{
+				vTaskResume(AxiTask_Handler);
+				vTaskResume(TemTask_Handler);
+				vTaskResume(LigTask_Handler);
+			}
+			else 
+			{
+				vTaskSuspend(AxiTask_Handler);
+				vTaskSuspend(TemTask_Handler);
+				vTaskSuspend(LigTask_Handler);
 			}
 		}
 	}
@@ -104,7 +124,7 @@ void my_sensor_gui(void)
 /***********************************开关部件**************************************************/
 
 	my_switch_gui();
-	
+	task_on();
 	lv_obj_add_event_cb(my_gui_switch.lig, all_even_cb ,LV_EVENT_VALUE_CHANGED ,NULL);			//创建回调函数
 	lv_obj_add_event_cb(my_gui_switch.tem, all_even_cb ,LV_EVENT_VALUE_CHANGED ,NULL);
 	lv_obj_add_event_cb(my_gui_switch.axi, all_even_cb ,LV_EVENT_VALUE_CHANGED ,NULL);
@@ -113,7 +133,16 @@ void my_sensor_gui(void)
 	my_label_gui();
 }
 
-
+void task_on(void)
+{
+	task_all = lv_switch_create(lv_scr_act());
+	
+	lv_obj_align(task_all, LV_ALIGN_CENTER, 0, 0);		
+	
+	lv_obj_add_event_cb(task_all , all_even_cb ,LV_EVENT_VALUE_CHANGED, NULL);
+	
+	
+}
 
 
 

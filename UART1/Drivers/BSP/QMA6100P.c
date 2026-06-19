@@ -1,22 +1,7 @@
 #include "i2c.h"
 #include "QMA6100P.h"
 
-
-#define QMA6100P_ADDR     						0x12				//QMA6100P配置为原理图情况的地址	
-#define QMA6100P_L_DATA_L     				0x01        //QMA数据寄存器地址
-#define QMA6100P_L_DATA_H     				0x02        //QMA数据寄存器地址
-#define QMA6100P_M_DATA_L     				0x03        //QMA数据寄存器地址
-#define QMA6100P_M_DATA_H     				0x04        //QMA数据寄存器地址
-#define QMA6100P_H_DATA_L     				0x05        //QMA数据寄存器地址
-#define QMA6100P_H_DATA_H     				0x06        //QMA数据寄存器地址
-
-#define QMA6100P_RANGE_REGISTER     	0x0F        //QMA量程滤波器寄存器地址
-#define QMA6100P_OUTPUT_DATA_RATE     0x10        //QMA输出速率和滤波器极性寄存器地址
-#define QMA6100P_PM_REGISTER 					0x11				//是否唤醒等
-#define QMA6100P_ID										0x00        //ID
-
 Qma6100p_axis_t imu_val = {0};
-uint8_t buf[6]= {0}; // 一次性读取6个字节（0x01~0x06）
 
 /* QMA6100P初始化，输出寄存器配置，使得QMA6100P输出数据,手册的初始化流程 */
 void QMA6100P_Init(void)
@@ -114,8 +99,9 @@ uint8_t QMA6100P_Read_ID(void)
 
 void QMA_Read_Axis(Qma6100p_axis_t *axis)
 {
+	uint8_t buf[6]= {0}; // 一次性读取6个字节（0x01~0x06）
     if(HAL_I2C_Mem_Read(&hi2c1,(QMA6100P_ADDR<<1),QMA6100P_L_DATA_L,
-                        I2C_MEMADD_SIZE_8BIT,buf,6,200)==HAL_OK)
+                        I2C_MEMADD_SIZE_8BIT,buf,6,200) == HAL_OK)
     {
         axis->x_data = (short)(((buf[1]<<8)|buf[0])>>2);
         axis->y_data = (short)(((buf[3]<<8)|buf[2])>>2);

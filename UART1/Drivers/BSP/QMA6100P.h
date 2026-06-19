@@ -26,5 +26,6 @@ extern Qma6100p_axis_t imu_val;			//加速度值
 void QMA6100P_Init(void);
 uint8_t QMA6100P_Read_ID(void);
 void QMA_Read_Axis(Qma6100p_axis_t *axis);
+
 #endif
 

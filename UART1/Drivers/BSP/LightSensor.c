@@ -3,12 +3,22 @@
 
 uint8_t Lig = 0;
 uint16_t lig_adc_buffer[ADC_LIG_SIZE] = {0};  /*!< 存储从DMA接收的ADC原始值 */
-												
+
+/**
+ * @brief Light传感器初始化函数
+ * @param 无
+ * @retval 无
+*/
 void Lig_init(void)
 {
-	HAL_ADC_Start_DMA(&hadc3, (uint32_t*)lig_adc_buffer, ADC_LIG_SIZE);
+	HAL_ADC_Start_DMA(&hadc3, (uint32_t*)lig_adc_buffer, ADC_LIG_SIZE);	//将DMA传输的数据存储到buffer
 }
 
+/**
+ * @brief 获取光照强度函数
+ * @param 无
+ * @retval 光照强度
+*/
 uint8_t Lig_Get_Val(void)
 {
 	uint32_t light =  (uint32_t)lig_adc_buffer[0];			/*!< 获取ADC原始值 */

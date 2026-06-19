@@ -9,11 +9,9 @@
 
 #define CT_IIC_SCL_GPIO_PORT            GPIOB
 #define CT_IIC_SCL_GPIO_PIN             GPIO_PIN_0
-#define CT_IIC_SCL_GPIO_CLK_ENABLE()    do{ __HAL_RCC_GPIOB_CLK_ENABLE(); }while(0)   /* PB口时钟使能 */
 
 #define CT_IIC_SDA_GPIO_PORT            GPIOF
 #define CT_IIC_SDA_GPIO_PIN             GPIO_PIN_11
-#define CT_IIC_SDA_GPIO_CLK_ENABLE()    do{ __HAL_RCC_GPIOF_CLK_ENABLE(); }while(0)   /* PB口时钟使能 */
 
 /******************************************************************************************/
 

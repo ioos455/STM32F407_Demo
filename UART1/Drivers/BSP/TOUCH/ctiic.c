@@ -19,19 +19,19 @@ static void ct_iic_delay(void)
  */
 void ct_iic_init(void)
 {
-    GPIO_InitTypeDef gpio_init_struct;
-    
-    CT_IIC_SCL_GPIO_CLK_ENABLE();   /* SCL引脚时钟使能 */
-    CT_IIC_SDA_GPIO_CLK_ENABLE();   /* SDA引脚时钟使能 */
+//    GPIO_InitTypeDef gpio_init_struct;
+//    
+//    CT_IIC_SCL_GPIO_CLK_ENABLE();   /* SCL引脚时钟使能 */
+//    CT_IIC_SDA_GPIO_CLK_ENABLE();   /* SDA引脚时钟使能 */
 
-    gpio_init_struct.Pin = CT_IIC_SCL_GPIO_PIN;
-    gpio_init_struct.Mode = GPIO_MODE_OUTPUT_OD;             /* 开漏输出 */
-    gpio_init_struct.Pull = GPIO_PULLUP;                     /* 上拉 */
-    gpio_init_struct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;      /* 高速 */
-    HAL_GPIO_Init(CT_IIC_SCL_GPIO_PORT, &gpio_init_struct);  /* 初始化SCL引脚 */
-    
-    gpio_init_struct.Pin = CT_IIC_SDA_GPIO_PIN;
-    HAL_GPIO_Init(CT_IIC_SDA_GPIO_PORT, &gpio_init_struct);  /* 初始化SDA引脚 */
+//    gpio_init_struct.Pin = CT_IIC_SCL_GPIO_PIN;
+//    gpio_init_struct.Mode = GPIO_MODE_OUTPUT_OD;             /* 开漏输出 */
+//    gpio_init_struct.Pull = GPIO_PULLUP;                     /* 上拉 */
+//    gpio_init_struct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;      /* 高速 */
+//    HAL_GPIO_Init(CT_IIC_SCL_GPIO_PORT, &gpio_init_struct);  /* 初始化SCL引脚 */
+//    
+//    gpio_init_struct.Pin = CT_IIC_SDA_GPIO_PIN;
+//    HAL_GPIO_Init(CT_IIC_SDA_GPIO_PORT, &gpio_init_struct);  /* 初始化SDA引脚 */
     /* SDA引脚模式设置,开漏输出,上拉, 这样就不用再设置IO方向了, 开漏输出的时候(=1), 也可以读取外部信号的高低电平 */
 
     ct_iic_stop();  /* 停止总线上所有设备 */

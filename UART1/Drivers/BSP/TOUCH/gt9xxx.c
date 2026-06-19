@@ -108,23 +108,23 @@ void gt9xxx_rd_reg(uint16_t reg, uint8_t *buf, uint8_t len)
  */
 uint8_t gt9xxx_init(void)
 {
-    GPIO_InitTypeDef gpio_init_struct;
+//    GPIO_InitTypeDef gpio_init_struct;
     uint8_t temp[5];
 
-    GT9XXX_RST_GPIO_CLK_ENABLE();   /* RST引脚时钟使能 */
-    GT9XXX_INT_GPIO_CLK_ENABLE();   /* INT引脚时钟使能 */
+//    GT9XXX_RST_GPIO_CLK_ENABLE();   /* RST引脚时钟使能 */
+//    GT9XXX_INT_GPIO_CLK_ENABLE();   /* INT引脚时钟使能 */
 
-    gpio_init_struct.Pin = GT9XXX_RST_GPIO_PIN;
-    gpio_init_struct.Mode = GPIO_MODE_OUTPUT_PP;            /* 推挽输出 */
-    gpio_init_struct.Pull = GPIO_PULLUP;                    /* 上拉 */
-    gpio_init_struct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;     /* 高速 */
-    HAL_GPIO_Init(GT9XXX_RST_GPIO_PORT, &gpio_init_struct); /* 初始化RST引脚 */
+//    gpio_init_struct.Pin = GT9XXX_RST_GPIO_PIN;
+//    gpio_init_struct.Mode = GPIO_MODE_OUTPUT_PP;            /* 推挽输出 */
+//    gpio_init_struct.Pull = GPIO_PULLUP;                    /* 上拉 */
+//    gpio_init_struct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;     /* 高速 */
+//    HAL_GPIO_Init(GT9XXX_RST_GPIO_PORT, &gpio_init_struct); /* 初始化RST引脚 */
 
-    gpio_init_struct.Pin = GT9XXX_INT_GPIO_PIN;
-    gpio_init_struct.Mode = GPIO_MODE_INPUT;                /* 输入 */
-    gpio_init_struct.Pull = GPIO_PULLUP;                    /* 上拉 */
-    gpio_init_struct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;     /* 高速 */
-    HAL_GPIO_Init(GT9XXX_INT_GPIO_PORT, &gpio_init_struct); /* 初始化INT引脚 */
+//    gpio_init_struct.Pin = GT9XXX_INT_GPIO_PIN;
+//    gpio_init_struct.Mode = GPIO_MODE_INPUT;                /* 输入 */
+//    gpio_init_struct.Pull = GPIO_PULLUP;                    /* 上拉 */
+//    gpio_init_struct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;     /* 高速 */
+//    HAL_GPIO_Init(GT9XXX_INT_GPIO_PORT, &gpio_init_struct); /* 初始化INT引脚 */
 
     ct_iic_init();      /* 初始化电容屏的I2C总线 */
     GT9XXX_RST(0);      /* 复位 */
@@ -132,12 +132,12 @@ uint8_t gt9xxx_init(void)
     GT9XXX_RST(1);      /* 释放复位 */
     delay_ms(10);
 
-    /* INT引脚模式设置, 输入模式, 浮空输入 */
-    gpio_init_struct.Pin = GT9XXX_INT_GPIO_PIN;
-    gpio_init_struct.Mode = GPIO_MODE_INPUT;                /* 输入 */
-    gpio_init_struct.Pull = GPIO_NOPULL;                    /* 不带上下拉，浮空模式 */
-    gpio_init_struct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;     /* 高速 */
-    HAL_GPIO_Init(GT9XXX_INT_GPIO_PORT, &gpio_init_struct); /* 初始化INT引脚 */
+//    /* INT引脚模式设置, 输入模式, 浮空输入 */
+//    gpio_init_struct.Pin = GT9XXX_INT_GPIO_PIN;
+//    gpio_init_struct.Mode = GPIO_MODE_INPUT;                /* 输入 */
+//    gpio_init_struct.Pull = GPIO_NOPULL;                    /* 不带上下拉，浮空模式 */
+//    gpio_init_struct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;     /* 高速 */
+//    HAL_GPIO_Init(GT9XXX_INT_GPIO_PORT, &gpio_init_struct); /* 初始化INT引脚 */
 
     delay_ms(100);
     gt9xxx_rd_reg(GT9XXX_PID_REG, temp, 4); /* 读取触摸IC的ID */
